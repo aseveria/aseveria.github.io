@@ -1,0 +1,5 @@
+"0","term.enr <- majordata%>%"
+"0","  filter(major1_division %in% c(""Fine Arts"" , ""Humanities"" , ""Interdisciplinary"" , ""Natural Sciences and Mathematics"" , ""Social Sciences""))"
+"2","Error in filter(., major1_division %in% c(""Fine Arts"", ""Humanities"", ""Interdisciplinary"",  : 
+  object 'majordata' not found
+"

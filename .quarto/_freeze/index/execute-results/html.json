@@ -1,0 +1,14 @@
+{
+  "hash": "f3f3d94d5de659282a527335d20e2642",
+  "result": {
+    "markdown": "---\ntitle: \"Elinai Alicia Severiano Perez\"\nimage: IMG_5601.jpeg\ntoc: false\nabout: \n  image-shape: round\n  image-width: 14em\n  template: trestles\n\n---\n\n\n**Hi, my name is Alicia (she/her)**\n\n*I am a sophomore at Macalester College double majoring in Data Science and Educational Studies. I love working with data, specifically to make findings/visuals much more understandable for everyone. \nFeel free to check out my Projects tab to learn more about my skills and my work.*\n\n---- \n**About me**\n\n*I am from Bensenville, Illinois. Prior to college, I danced Mexican Ballet Folklorico for six years, which still holds a special place in. My culture and roots are really important to me, and I try to showcase it as much as possible. My picture was taken before a Latinx showcase at my college this past year, where I danced Folklorico one last time.*\n\n\n::: {.cell}\n\n:::\n\n\n\n---- \n*Feel free to use my Questions tab to see what questions linger on my mind daily.*",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

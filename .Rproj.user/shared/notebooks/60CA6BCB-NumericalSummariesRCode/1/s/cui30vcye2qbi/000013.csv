@@ -1,0 +1,8 @@
+"0",""
+"0","NHANES %>%"
+"0","  filter(Age >=18) %>%"
+"0","  filter(BPDiaAve >0) %>%"
+"0","  ggplot(aes(x=BPDiaAve, y = TotChol, color = PhysActive)) +"
+"0","  geom_smooth(metheod = 'lm') +"
+"0","  geom_point() + labs(x = 'Diastolic Blood Pressure' , y = 'Total Cholesterol') + theme_minimal()"
+"2","Warning: [38;5;250mIgnoring unknown parameters: `metheod`[39m"

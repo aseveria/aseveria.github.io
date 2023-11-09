@@ -1,0 +1,4 @@
+"0",""
+"0","NHANES %>%"
+"0","  ggplot(aes(x=HomeOwn)) +"
+"0","  geom_bar()"

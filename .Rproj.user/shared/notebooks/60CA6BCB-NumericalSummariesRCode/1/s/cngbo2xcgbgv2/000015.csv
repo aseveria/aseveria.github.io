@@ -1,0 +1,7 @@
+"0",""
+"0","# condition on depressed"
+"0","NHANES %>%"
+"0","  filter(Age >= 18) %>%"
+"0","  count(Depressed, SleepTrouble) %>%"
+"0","  group_by(Depressed) %>%"
+"0","  mutate(condprop = n/sum(n))"

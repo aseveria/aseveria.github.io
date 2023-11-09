@@ -1,0 +1,21 @@
+---
+title: "Macalester College student Majors"
+image: majors.jpg
+image-alt: "Screenshot of enrollment in Major Categories (Male) ."
+categories:
+  - Collaboration
+  - Education
+about: 
+  template: solana
+  image: majors.jpg
+---
+
+In collaboration with a team of applied mathematicians, statisticians, and art historians and curators, I used data science and machine learning tools to estimate the diversity of artists at 18 U.S. art museums. The project goal was to make inferences about artist characteristics to summarize the diversity of a museum's collection.
+
+We performed data collection by web scraping information about the collections at the chosen art museums, designed the sampling method to create a subset of artists to focus on, and created a website that provides access to our final data set as well as graphical summaries for broad access to our results.
+
+This work has been covered in international news outlets including the San Francisco Chronicle, Smithsonian Magazine, The Guardian (UK), Minnesota Public Radio, and MIT Technology Review.
+
+\*\*Products\*\*
+
+\- Presentation: \<file:///Users/aliciaseveriano/Documents/First-Year/Fall%202022/COMP_STAT_112/Final%20Share-2/try2.html#/title-slide\>

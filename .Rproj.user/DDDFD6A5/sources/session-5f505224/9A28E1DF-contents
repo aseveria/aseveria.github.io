@@ -1,0 +1,36 @@
+---
+title: "Stat 112 review"
+author: "Alicia Severiano"
+date: "2023-09-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+data(diamonds)
+jewles<-diamonds
+```
+
+```{r}
+jewles %>%
+  ggplot(aes(x=cut))+
+  geom_bar()+
+  theme_classic()
+  
+```
+
+```{r}
+jewles%>%
+  ggplot(aes(x=price))+
+  geom_histogram()+
+  theme_classic()
+```
+
+```{r}
+jewles%>%
+  ggplot(aes(x=price))+
+  geom_line()
+
+```

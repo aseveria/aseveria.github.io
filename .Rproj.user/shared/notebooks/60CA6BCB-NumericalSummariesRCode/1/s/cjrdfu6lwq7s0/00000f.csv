@@ -1,0 +1,6 @@
+"0","adults <- NHANES %>%"
+"0","  filter(Age >= 18)"
+"0",""
+"0","adults %>%"
+"0","  group_by(PhysActive) %>%"
+"0","  summarize(mean(BPSysAve , na.rm = TRUE), median(BPSysAve, na.rm = TRUE) , sd(BPSysAve, na.rm = TRUE), IQR(BPSysAve, na.rm = TRUE))"

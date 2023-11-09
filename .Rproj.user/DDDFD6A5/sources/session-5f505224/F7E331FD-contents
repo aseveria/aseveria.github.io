@@ -1,0 +1,60 @@
+---
+title: "Comp/Stat 112: Tidy Tuesday 11"
+author: "INSERT STUDENT NAME HERE (COLLABORATOR NAMES HERE)"
+output:
+  bookdown::html_document2:
+    split_by: none
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      toc_collapsed: true
+    number_sections: false
+---
+
+```{r data_setup}
+# Get the Data
+library(tidyverse)
+
+image_alt <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-15/image_alt.csv')
+color_contrast <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-15/color_contrast.csv')
+ally_scores <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-15/ally_scores.csv')
+bytes_total <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-15/bytes_total.csv')
+speed_index <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-15/speed_index.csv')
+
+```
+
+## Data Context
+
+### Webpage Metrics
+
+The data this week comes from [httparchive.org](https://httparchive.org/reports/loading-speed?start=earliest&end=latest&view=list) by way of [Data is Plural](https://www.data-is-plural.com/archive/2022-11-02-edition/). As seen in: [“Why web pages can have a size problem”](https://blog.datawrapper.de/why-web-pages-can-have-a-size-problem/) (Datawrapper).
+
+Full detail available via BigQuery, but aggregate data used for this week.
+
+
+More details including the codebook is available [here](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-11-15)
+
+
+```{r}
+head(color_contrast)
+head(ally_scores)
+```
+
+
+## Research Question
+
+Develop a research question that you are interested in. *You may need to play with the data a little bit to learn more about what the values mean before you decide on a question.*
+
+> 
+
+```{r}
+
+```
+
+## Data Visualization
+
+Create a visualization that answers or addresses your research question.
+
+```{r}
+
+```

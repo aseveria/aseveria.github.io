@@ -1,0 +1,6 @@
+"0",""
+"0",""
+"0","NHANES %>%"
+"0","  filter(Age >=18) %>%"
+"0","  filter(BPDiaAve >0) %>%"
+"0","  summarize(r = cor(BPDiaAve, TotChol, use = 'complete.obs'))"

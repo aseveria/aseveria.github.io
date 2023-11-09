@@ -1,0 +1,5 @@
+"0",""
+"0","NHANES %>%"
+"0","  filter(Age >= 18) %>%"
+"0","  ggplot(aes(x = Depressed, fill = SleepTrouble)) +"
+"0","  geom_bar(position = 'fill')"

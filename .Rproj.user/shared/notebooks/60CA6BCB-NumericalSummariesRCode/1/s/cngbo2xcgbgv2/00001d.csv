@@ -1,0 +1,15 @@
+"0",""
+"0","library(ggmosaic)"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"2","Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+"
+"0","NHANES %>%"
+"0","  filter(Age >=18) %>%"
+"0","  ggplot() +"
+"0","  geom_mosaic(aes(x = product(Depressed, SleepTrouble),fill ="
+"0","Depressed))"
