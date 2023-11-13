@@ -15,8 +15,8 @@ about:
 :::{#intro-heading}
 
 
-*I love working with data, specifically to make findings/visuals much more understandable for everyone. 
-Feel free to check out my Projects tab to learn more about my skills and my work.*
+I love working with data, specifically to make findings/visuals much more understandable for everyone. 
+Feel free to check out my Projects tab to learn more about my skills and my work.
 
 ## Education
 Macalester College | St. Paul MN <br>
@@ -24,13 +24,13 @@ Majors in Data Science and Educational Studies | Expected Graduation Date: Sprin
 
 
 ## About me
-*I am from Bensenville, Illinois. Prior to college, I danced Mexican Ballet Folklorico for six years, which still holds a special place in. My culture and roots are really important to me, and I try to showcase it as much as possible. My picture was taken before a Latinx showcase at my college this past year, where I danced Folklorico one last time.*
+I am from Bensenville, Illinois. Prior to college, I danced Mexican Ballet Folklorico for six years, which still holds a special place in my heart. My culture and roots are really important to me, and I try to showcase it as much as possible. My picture was taken before a Latinx showcase at my college this past year, where I danced Folklorico one last time.*
 
-*Outside of coding, I also strive to work on creating a safe and welcoming environment for students like me: BIPOC, Low-Income, Latina,  and children of immigrants. *
+Outside of coding, I also strive to work on creating a safe and welcoming environment for students like me: BIPOC, Low-Income, Latina,  and children of immigrants. 
 
 
 
-*If you want to get an idea of what I am constantly thinking click on my Questions tab to see what questions linger on my mind daily.*
+If you want to get an idea of what I am constantly thinking click on my Questions tab to see what questions linger on my mind daily.
 
 
 ## Contact me
