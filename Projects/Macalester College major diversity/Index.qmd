@@ -13,8 +13,10 @@ In collaboration with two classmates in our intro to data science course, we cen
 
 We did a lot of data wrangling to find answers to our question, which was, is there a difference between men and woman, in terms of majors/field one joins and has this changed throughout time. Below will be my code for my parts in this project 
 
+###Collaborators
+Lindsay Alaniz, Sicy Wang, and Elinai Alicia Severiano Perez
 
-\*\*Products\*\*
+###Products
 
 
 
@@ -29,7 +31,7 @@ majordata <- read_csv("majordatacopy.csv")
 ```
 
 
-\*\*Major Divisions\*\*
+**Major Divisions**
 
 For this part I looked into the five major divisions: Social Sciences, Natural Sciences and Mathematics, Humanities, Interdisciplinary, and Fine Arts. I compared them over the years and a graph for women and one for men. 
 
@@ -89,7 +91,7 @@ theme_classic()+
 ggplotly(p1)
 ```
 
-\*\*Concentrations\*\*
+**Concentrations**
 
 For this part I looked into the different concentrations offered at Macalester and the enrollment between men and women. Further, I looked into first concentration (as in the first declared by a student) and second concentration 
 ```{r}
@@ -122,7 +124,7 @@ theme_minimal() +
     theme(text = element_text(family = "Times New Roman")) 
 ggplotly(p3)
 ```
-\*\*Term Enrollment\*\*
+**Term Enrollment**
 
 Finally, I looked into the different lengths of term enrollments between men and women, but more specifically, by major division
 
