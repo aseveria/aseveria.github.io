@@ -1,26 +1,30 @@
 ---
-title: "depressed"
-format: html
-editor: visual
+title: "Looking into mental health | Depression | Machine Learning"
+image: depressed.jpg
+image-alt: " Looking into the mean accuracy of our decison tree"
+categories:
+  - Collaboration
+  - Mental Health
+  - Statistics
+  - Machine Learning
+about: 
+  template: solana
+  image: depressed.jpg
 ---
+In collaboration with my classmate, in our Statistical Machine Learning Course, we decided to look into Depression. Specifically, our questions were :
 
-## Quarto
+*Given one's marital status, gender, age, general health, physical health, slept hours, mental health, and having depression or not, how much would one make in terms of household income?*
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+*Given one\'s marital status, gender, age, general health, physical health, hours slept, mental health, and household income, do we predict that an individual is classified as being Depressed or not?*
 
-## Running Code
+We used different methods to answer our questions, from decision trees, OLS models, GAMs with splines, and more!!
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Our conclusions ended up concluding that there is various ins and outs of what other factors might partake in depression. Though, we have to consider that our models are not cause and effect model. Thus not everyone fits in such binary categories. Furthermore, we concluded that regression models weren't the best for our data set. 
 
-```{r}
-1 + 1
-```
 
-You can add options to executable code like this
+**Collaborators**
+Michelle Dong and Alicia Severiano Perez
 
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
+**Link**
+To view our presentation click the link below:
+https://docs.google.com/presentation/d/1Ke_X_OjVH85NP2IKAsqNYvftnBEbFLl5kuxFijCWRkY/edit?usp=sharing
