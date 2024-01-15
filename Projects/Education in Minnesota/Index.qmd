@@ -1,0 +1,24 @@
+---
+title: "Education in Minnesota"
+image: map.jpg
+image-alt: "Map of Population per School"
+categories:
+  - Collaboration
+  - Education
+  - Web-Scrapping
+  - API
+about: 
+  template: solana
+  image: map.jpg
+---
+
+In collaboration with another classmate in our intermediate data science course, we centered our final project around the question, what does a classroom look like in the state of Minnesota?
+
+We did a lot of web scrapping, data-visualizations, and collaboration to make this project come together. Our website is interactive so have fun learning about the differences in education per county. 
+
+### Collaborators
+Michael Nadeau and Elinai Alicia Severiano Perez
+
+### Products
+
+Our Project can be seen in the following [Link](https://aseveria.shinyapps.io/Education_FINAL_DS212/)

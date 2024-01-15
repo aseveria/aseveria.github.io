@@ -95,7 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -130,7 +130,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+  <ul>
+  <li><a href="#collaborators" id="toc-collaborators" class="nav-link active" data-scroll-target="#collaborators">Collaborators</a></li>
+  <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products">Products</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <div class="quarto-about-solana column-body">
   <div class="about-entity">
@@ -148,11 +156,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </header> 
       <div class="about-contents"><main class="content" id="quarto-document-content">
+
 <p>In collaboration with classmates in our intro to statistics course, we centered our final project around safety of water safety, as in what makes it same or not.</p>
 <p>We applied statistical models to answer our question, what makes water unsafe? Our final conclusion was that increases in Ph level are correlated with lower water potability.</p>
 <p>Below will be our final paper, as well as our models</p>
-<p>###Collaborators Andrew Yacoub, Iris Guo, Jesus Castillo Palacios, and Elinai Alicia Severiano Perez</p>
-<p>###Products</p>
+<section id="collaborators" class="level3">
+<h3 data-anchor-id="collaborators">Collaborators</h3>
+<p>Andrew Yacoub, Iris Guo, Jesus Castillo Palacios, and Elinai Alicia Severiano Perez</p>
+</section>
+<section id="products" class="level3">
+<h3 data-anchor-id="products">Products</h3>
 <p><strong>Introduction</strong> Throughout the world, not all water is safe to consume. With water being a basic human necessity, it is important to understand the potability of water. The reason being that everyone drinks water and if it is not safe to drink, there could easily be an increase in public health concern due to the health deterioration that unsafe water could bring. Throughout our study we will research how pH levels affect water potability in different water sources around the world. The research also considered chloramine levels as that may also affect water potability. For chloramine levels, the study researched how different levels of chloramines affects pH levels and as a result changes water potability. It is crucial to understand which areas are most susceptible to unsafe water through their pH and chloramine levels before being able to assist in fixing this public health issue.</p>
 <p><strong>Dataset and Exploratory Data Analysis</strong> The water potability data set used focuses on 3276 different bodies of water from all over the world and how safe it is to drink their water. 491 of the cases had variables that were not available and so they weren’t used in the analysis in order to not have them influence the data. Water potability can be measured with 10 different variables, but this study uses pH and chloramine levels as the 2 variables of interest. This is done because of how much more important these variables are to water potability. Water acidity is measured by pH levels yet there are no set unit labels. The pH levels in this dataset range from 3.5 - 10.5 where the lower pH level indicates a more acidic water. The World Health Organization (WHO) recommends a maximum permissible limit of pH from 6.5 - 8.5. It is important to note that a pH level of 7 indicates a body of water that is not acidic nor basic. Chloramines are disinfectants used to treat water for safe drinking. This variable is a concentration unit with the unit labels being parts per million (ppm) as chloramine levels range from 4 - 10 ppm. Something to note with this variable is that there can be outliers that don’t fit the 4 - 10 ppm range for chloramines or the 3.5 - 10.5 for the pH levels. The data set was supplied to us by Kaggle from research conducted by Creative Commons and made public for all to use.</p>
 <p><strong>Methods</strong> While looking at our water potability data set, we noticed that some values within the pH column were missing. Thus to attribute this we cleaned up our data set by taking those variables out of our dataset, which as a result were 491 variables that we took out of our dataset. The reasoning behind this is because we cannot simply put a replacement value towards those variables, as they will skew our results in ways that might not fully be representative of our actual results, as in the true values of pH. For our study we used the following multiple logistic regression model: log (odds(Potability=1 | ph, Chloramines) = β0 + β1<em>ph + β2</em>Chloramines + β3(ph<em>Chloramines) We decided on such a model because the logistic aspect of it accounted for our outcome (or Y) being either 0 or 1 , as in the water potability is either not safe to drink or it is safe to drink. In addition we decided on having multiple variables because we wanted to account for Chloramines influencing potability. We noticed this when we fit an interaction term to our model and noticed a difference in our results. Thus pushing us to believe that Chloramines were potential cofounders and needed to be taken into account into our model. We decided on only including those two variables because if we took into account the rest of the variables we would have studied results that only came about in situations where all the other variables were accounted for, which is really specific and not broad enough to make conclusions that could be used for our population overall. Additionally, after looking at different visuals with different variables, we concluded that ph and Chloramines were the most influential towards Potability of water. Our population parameter is a beta parameter. Our question involves water quality associated with pH levels so our parameter represents the average change in water potability associated with a unit increase in pH (β1). We also wanted to see if chloramines could be used as an interaction term and have an effect on pH levels (and possibly water quality) so this is another population parameter (β2). Since we’re using chloramines as an interaction term, we also have a β3 (pH</em>chloramines).</p>
@@ -305,6 +318,7 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 
 
+</section>
 </main></div>
     </div>
     <img src="water.jpg" alt=" Boxplot visualiazing the relationship between potability and Chloramines " class="about-image

@@ -13,10 +13,10 @@ In collaboration with two classmates in our intro to data science course, we cen
 
 We did a lot of data wrangling to find answers to our question, which was, is there a difference between men and woman, in terms of majors/field one joins and has this changed throughout time. Below will be my code for my parts in this project 
 
-###Collaborators
+### Collaborators
 Lindsay Alaniz, Sicy Wang, and Elinai Alicia Severiano Perez
 
-###Products
+### Products
 
 
 

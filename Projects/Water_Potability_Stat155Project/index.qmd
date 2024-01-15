@@ -17,10 +17,10 @@ We applied statistical models to answer our question, what makes water unsafe? O
 
 Below will be our final paper, as well as our models 
 
-###Collaborators
+### Collaborators
 Andrew Yacoub, Iris Guo, Jesus Castillo Palacios,  and Elinai Alicia Severiano Perez
 
-###Products
+### Products
 
 **Introduction**
 	Throughout the world, not all water is safe to consume. With water being a basic human necessity, it is important to understand the potability of water. The reason being that everyone drinks water and if it is not safe to drink, there could easily be an increase in public health concern due to the health deterioration that unsafe water could bring. Throughout our study we will research how pH levels affect water potability in different water sources around the world. The research also considered chloramine levels as that may also affect water potability. For chloramine levels, the study researched how different levels of chloramines affects pH levels and as a result changes water potability. It is crucial to understand which areas are most susceptible to unsafe water through their pH and chloramine levels before being able to assist in fixing this public health issue. 
