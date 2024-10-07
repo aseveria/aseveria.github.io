@@ -17,7 +17,7 @@ about:
       target: _blank
     - icon: envelope
       text: Email
-      href: aseveria@macalester.edu
+      href: mailto:aseveria@macalester.edu
     - icon: file-text
       text: Resume
       href: https://drive.google.com/file/d/1huakF6UghCpyABH8HmiDoO2y-kUJ_-3K/view?usp=share_link
