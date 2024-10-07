@@ -24,4 +24,3 @@ My responsibilities included detecting weather anomalies using public data from 
 Additionally, the initial weeks of my program involved geocoding, debugging, and improving the reproducibility of the code.
 
 ## Poster
-<iframe src="Poster.pdf" width="800" height="600" style="border: none;"></iframe>
