@@ -13,6 +13,8 @@ website:
         text: Questions
       - href: Projects.qmd
         text: Projects
+      - href: Research.qmd
+        text: Research
   page-footer:
     left: |
       &copy; Elinai Alicia Severiano Perez, 2023<br>

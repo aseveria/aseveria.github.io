@@ -61,5 +61,33 @@
     "title": "Education in Minnesota",
     "section": "",
     "text": "In collaboration with another classmate in our intermediate data science course, we centered our final project around the question, what does a classroom look like in the state of Minnesota?\nWe did a lot of web scrapping, data-visualizations, and collaboration to make this project come together. Our website is interactive so have fun learning about the differences in education per county.\n\nCollaborators\nMichael Nadeau and Elinai Alicia Severiano Perez\n\n\nProducts\nOur Project can be seen in the following Link"
+  },
+  {
+    "objectID": "Research.html",
+    "href": "Research.html",
+    "title": "Research",
+    "section": "",
+    "text": "“”\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Research/DSI/Sociome Data Commons.html",
+    "href": "Research/DSI/Sociome Data Commons.html",
+    "title": "Sociome Data Commons",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "Research/DSI/Sociome Data Commons.html#quarto",
+    "href": "Research/DSI/Sociome Data Commons.html#quarto",
+    "title": "Sociome Data Commons",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "Research/DSI/Sociome Data Commons.html#running-code",
+    "href": "Research/DSI/Sociome Data Commons.html#running-code",
+    "title": "Sociome Data Commons",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   }
 ]
