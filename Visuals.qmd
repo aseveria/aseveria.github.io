@@ -5,3 +5,202 @@ about:
   template: solana
 ---
 I believe that effective data storytelling can convey information more smoothly and efficiently. Over the years, I have focused on enhancing my visualization skills to achieve this. Below are some examples of my work.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(janitor) 
+library(geojsonio) 
+library(sf) 
+library(USAboundaries)  
+library(elevatr) 
+library(tidycensus)
+library("patchwork")
+library("gapminder")
+library(cowplot)
+library(ggpubr)
+library(ggplot2)
+library(plotly)
+```
+
+```{r, message=FALSE, warning=FALSE, results="hide",echo = FALSE}
+
+census2020 <- tidycensus::get_acs(year = 2020, state = "MN", geography = "tract", variables = c(	
+"B01003_001", "B19013_001", "B23006_023", "B25058_001", "B25107_001", "B25003_001", "B25003_002", "B25003_003", "B25077_001"), output = 'wide', geometry = TRUE) %>%
+  filter(word(NAME, 4) %in% c("Ramsey","Hennepin"))%>%
+               mutate(tract = word(NAME, 3),
+                      tract = str_remove(tract, ","),
+                      county = word(NAME, 4)) %>%
+               select(-NAME) %>%
+               rename("population" = "B01003_001E", 
+                      "medianIncome" = "B19013_001E", 
+                      "bachelors" = "B23006_023E",
+                      "medContractRent" = "B25058_001E", 
+                      "tenureTotal" = "B25003_001E", 
+                      "tenureOwned" = "B25003_002E", 
+                      "tenureRented" = "B25003_003E",
+                      "medianHomeValue"= "B25077_001E") %>%
+  select(-contains("_"))
+
+crashes <- read_csv("https://lmyint.github.io/212_fall_2023/data/Crash.csv") %>%
+    filter(!is.na(Latitude), !is.na(Longitude))
+```
+
+```{r, message=FALSE, warning=FALSE, results="hide", echo = FALSE}
+roads <- sf::st_read("tl_2019_27_prisecroads")
+
+st_crs(census2020)
+st_crs(roads)
+
+roads <- roads %>%
+  st_transform(crs=st_crs(census2020))
+roads_sub <- st_crop(roads,st_bbox(census2020))
+```
+
+```{r, message=FALSE, warning=FALSE, results="hide", echo = FALSE}
+ggplot() +
+  geom_sf(data=census2020 %>% drop_na(medianIncome), mapping=aes(fill=medianIncome), alpha=0.99) + #put census tracts on map and fill by your variable of interest\
+    geom_sf(data=roads_sub ,fill = "gray", color = "gray", lwd = 0.2)+ #roads data here
+    labs(fill="Median Income", color="", title="Median Income per tract in Ramsey and Hennepin County (MN)")+ # add labels to fit your variables 
+    scale_fill_gradientn(colours = c("tomato4", "tomato3", "orange3", "lightsalmon4"))+ # change to preferred color palette
+    theme_classic()+
+    theme(axis.line = element_blank(), 
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        legend.position = "bottom", 
+        plot.title.position = "plot", 
+        plot.title = element_text(size = 8), 
+        plot.subtitle = element_text(size = 8),
+        legend.text = element_text(size=5))
+```
+
+```{r, message=FALSE, warning=FALSE, results="hide", echo = FALSE}
+weather <- read_csv("https://lmyint.github.io/212_fall_2023/data/sfo_weather.csv")
+
+FirstDay <- weather%>%
+  group_by("Month") %>%
+  filter(Day=="1")
+
+LastDay <- weather %>%
+  group_by(Month) %>%
+  filter(Day == max(Day))
+
+midday<- weather %>%
+  group_by("Month") %>%
+  filter(Day=="14")
+  
+PRec <- weather %>%
+  filter(RecordP == "TRUE")
+
+TempRecord<- weather %>%
+  filter(Record=="TRUE")
+
+MRecord <- weather %>%
+  group_by(Month) %>%
+  mutate(MPrecRecord = max(CulmPrec)) %>%
+  filter(Day == "15")
+
+bp<-weather %>%
+  ggplot()+
+  geom_linerange(aes(x = dateInYear, ymin = RecordLow, ymax = RecordHigh), color = "#ECEBE3", linewidth = 1.5) +
+  geom_linerange(aes(x = dateInYear, ymin = NormalLow, ymax = NormalHigh), color = "#C8B8BA", linewidth = 1) +
+  geom_linerange(aes(x = dateInYear, ymin = Low, ymax = High), color = "#A90248", linewidth = 1) +
+  geom_vline(data = LastDay, aes(xintercept = dateInYear), lty = "dotted", color = "gray91") +
+  geom_point(data = TempRecord, aes(y = RecordHigh , x = dateInYear), shape = 25, fill = 1, size = 2, ylab=NULL) +
+  geom_text(data = TempRecord, aes(x = dateInYear + 2, y = RecordHigh  + 15, label = RecordHigh), ylab=NULL,size=2)+
+  geom_text(data = TempRecord, aes(x = dateInYear + 2, y = RecordHigh  + 20, label = "RecordHigh:"), ylab=NULL,size=2)+
+  labs( title = "SFO weather in 2011", subtitle = "Temperature") +  
+  theme(axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.line.y = element_line(color="black", size = 0.2),
+        plot.subtitle = element_text(face = "bold", vjust = 0.01,size=10),
+        plot.title = element_text(hjust = 0.5),
+        panel.grid = element_blank(),
+        panel.background = element_blank())+
+  scale_x_continuous(expand = c(0, 0),breaks= midday %>% pull(dateInYear), labels = month.abb) +
+  scale_y_continuous(expand = c(0, 43))+
+  coord_cartesian(ylim = c(0, 100)) 
+
+
+
+dp<-weather %>%
+  ggplot() +
+  geom_line(aes(y = CulmPrec, x = dateInYear)) +
+  geom_area(aes(y = CulmPrec, x = dateInYear ), color="#32a3d8",fill="#ebeae2")+
+  geom_vline(data = LastDay, aes(xintercept = dateInYear), color = "gray") +
+  theme(plot.title = element_text(face = "bold", vjust = 0.01, size=10),
+        axis.text.x=element_blank(),
+        axis.title=element_blank(),
+        axis.line.y = element_line(color="black", size = 0.2),
+        axis.ticks.x=element_blank(),
+        panel.grid = element_blank(),
+        panel.background = element_blank()) +
+  ggtitle("Precipitation")+
+  geom_point(data = PRec, aes(y = CulmPrec + 0.23, x = dateInYear), shape = 25, fill = 1, size = 2) +
+  geom_text(data = MRecord, aes(x = dateInYear , y = MPrecRecord , label = MPrecRecord), size=3)+
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0.45))+
+  coord_cartesian(ylim = c(0, 8)) 
+
+
+plot_grid(bp, dp, align = "v", nrow = 2, rel_heights = c(5/8, 2/8))
+
+```
+
+
+
+```{r, message=FALSE, warning=FALSE, echo = FALSE}
+
+wcmatches <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/wcmatches.csv')
+
+wc<-wcmatches %>%
+  filter(outcome %in% c("H", "A")) %>%
+   group_by(year,outcome)  %>%
+  summarize(Total = n()) 
+
+
+p <-wc %>%
+  ggplot(aes(x=year, y= Total , color=outcome)) +
+  geom_point() +
+  geom_line() +
+  scale_color_manual(values=c("steelblue2" ,  "saddlebrown")) +
+  annotate("text", x= 1992,, y=24, label="Home", color="saddlebrown") +
+  annotate("text" , x = 2004,,y=16,label="Away" , color="steelblue2") +
+  labs(x=NULL, y=NULL) +
+  ggtitle("<span style='font-size: 18pt;'>FIFA World Cup Matches 1930-2019 \n<span style='font-size: 12pt;'>Total Couth of Wins Per Team Type & Year") +
+theme_classic() +
+    theme(legend.position= "none") 
+ggplotly(p)
+```
+```{r, message=FALSE, warning=FALSE, echo = FALSE}
+gifts_gender <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-13/gifts_gender.csv')
+
+gender_longer <- gifts_gender%>%
+  pivot_longer(cols = c(`GiftCards`, `Clothing`, `EveningOut`, `GreetingCards`, `Jewelry`, `Flowers`, `Candy`, `SpendingCelebrating`), names_to = "stuff", values_to = "count")
+geom_heart <- function (mapping = NULL, data = NULL, stat = "identity", position = "identity", 
+  ..., parse = FALSE, nudge_x = 0, nudge_y = 0, check_overlap = FALSE, 
+  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE) 
+{
+  if (!missing(nudge_x) || !missing(nudge_y)) {
+    if (!missing(position)) {
+      stop("Specify either `position` or `nudge_x`/`nudge_y`", 
+        call. = FALSE)
+    }
+    position <- position_nudge(nudge_x, nudge_y)
+  }
+  layer(data = data, mapping = mapping, stat = stat, geom = GeomText, 
+    position = position, show.legend = show.legend, inherit.aes = inherit.aes, 
+    params = list(parse = parse, check_overlap = check_overlap, 
+      na.rm = na.rm, label = sprintf('\u2665'), ...))
+}
+
+gender_longer%>%
+  ggplot(aes(y= stuff, x= count, group = stuff)) +
+  scale_color_manual(values = c("#1F8983", "#AB3970"))+
+  geom_line()+
+  labs(x="Count", y= "Category", title = "Average spendings on Valentines Day (2010-2022)")+
+  geom_heart(aes(color = Gender), size=15) +
+  theme_classic()
+```
+
