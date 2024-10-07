@@ -36,7 +36,6 @@ majordata <- read_csv("majordatacopy.csv")
 For this part I looked into the five major divisions: Social Sciences, Natural Sciences and Mathematics, Humanities, Interdisciplinary, and Fine Arts. I compared them over the years and a graph for women and one for men. 
 
 ```{r}
-
 majordata14 <- majordata %>%
   select(grad_year, major1_division ,sex) %>%
     filter(sex=="F")%>%
@@ -98,31 +97,28 @@ For this part I looked into the different concentrations offered at Macalester a
 conc <- majordata %>%
   filter(concentration_ct == "1" ) 
 
-
-p2 <-conc %>%
-  ggplot(aes(x = sex, fill = Conc1Desc)) +
+conc %>%
+  ggplot(aes(x=sex, fill= Conc1Desc)) +
   geom_bar(position = 'fill') +
-scale_fill_manual(values = c("coral4", "darkkhaki", "darkgoldenrod2" , "burlywood", "darkolivegreen", "darkslategrey", "darkcyan" , "cornflowerblue" , "antiquewhite4" , "darkorange3" , "darkorchid" , "darkseagreen" , "deeppink4")) +
-   labs(x=NULL, y= NULL , fill= "Concentrations") +  
-  ggtitle("<span style='font-size: 18pt;'>Macalester College | First Concentration \n<span style='font-size: 12pt;'> Percentage of Female & Male in their first concentrations ") +
-theme_classic() +
+  scale_fill_manual(values = c("coral4", "darkgoldenrod2" , "burlywood", "darkolivegreen", "darkslategrey", "darkcyan" ,  "darkorange3", "coral3", "darkgoldenrod4", "burlywood4", "darkorange1")) +
+    labs(x=NULL, y= NULL , fill= "Concentrations", title ="Macalester College | First Concentration", subtitle = "Percentage of Females & Males in their first concentration" ) +  
+theme_minimal() +
     theme(text = element_text(family = "Times New Roman")) 
-ggplotly(p2)
 ```
 
 ```{r}
 conc2 <- majordata %>%
   filter(concentration_ct == "2" ) 
 
-p3 <-conc2 %>%
+conc2 %>%
   ggplot(aes(x=sex, fill= Conc2Desc)) +
   geom_bar(position = 'fill') +
-  scale_fill_manual(values = c("coral4", "darkgoldenrod2" , "burlywood", "darkolivegreen", "darkslategrey", "darkcyan" ,  "darkorange3")) +
-    labs(x=NULL, y= NULL , fill= "Concentrations") +  
-  ggtitle("<span style='font-size: 18pt;'>Macalester College | Second Concentration \n<span style='font-size: 12pt;'> Percentage of Female & Male in their second concentrations ") +
+  
+  scale_fill_manual(values = c("coral4", "darkgoldenrod2" , "burlywood", "darkolivegreen", "darkslategrey", "darkcyan" ,  "darkorange3", "coral3", "darkgoldenrod4", "burlywood4", "darkorange1")) +
+    labs(x=NULL, y= NULL , fill= "Concentrations", title ="Macalester College | Second Concentration", subtitle = "Percentage of  Females & Males in their Second concentration" ) +  
 theme_minimal() +
     theme(text = element_text(family = "Times New Roman")) 
-ggplotly(p3)
+
 ```
 **Term Enrollment**
 
@@ -132,8 +128,7 @@ Finally, I looked into the different lengths of term enrollments between men and
 term.enr <- majordata%>%
   filter(major1_division %in% c("Fine Arts" , "Humanities" , "Interdisciplinary" , "Natural Sciences and Mathematics" , "Social Sciences"))
 
-
-p5 <- term.enr %>%
+term.enr %>%
 ggplot(aes(x=terms_enrl_ct)) +
   geom_density(aes(fill=sex) , alpha=0.5) +
   facet_wrap(~major1_division) +
@@ -141,6 +136,6 @@ ggplot(aes(x=terms_enrl_ct)) +
      labs(x=NULL, y= NULL, title = "Term Enrollment Distribution", subtitle = "Term Enrollment per major division and gender") +  
   theme_classic() +
       theme(text = element_text(family = "Times New Roman")) 
-ggplotly(p5)
+
 ```
 
