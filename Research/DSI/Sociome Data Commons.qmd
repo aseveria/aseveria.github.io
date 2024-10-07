@@ -2,11 +2,26 @@
 title: "Sociome Data Commons"
 image: DSI.jpg
 categories:
-  - Collaboration
   - Machine Learning
   - Public Health
+  - Python
+  - Google Colab
 about: 
   template: solana
   image: DSI.jpg
 ---
 
+## Research Overview
+
+During the University of Chicago's Data Science Summer Lab program, I had the opportunity to work as a research assistant on a project called the Sociome Data Commons. This project aims to create an open-source platform for uploading, storing, and accessing sociome datasets, particularly those related to clinical data. Sociome data encompasses variables related to Social Determinants of Health, as well as social, environmental, behavioral, housing, and economic factors.
+
+### My Contribution
+
+I focused on environmental data, which is crucial to explore in conjunction with healthcare data, as it can help identify exacerbating factors or causes of poor health. For example, high humidity levels have been found to trigger airway narrowing in individuals with asthma.
+
+My responsibilities included detecting weather anomalies using public data from the National Oceanic and Atmospheric Administration (NOAA). I employed machine learning methods, such as k-Nearest Neighbors (KNN) and Rolling Means, to accomplish this task.
+
+Additionally, the initial weeks of my program involved geocoding, debugging, and improving the reproducibility of the code.
+
+## Poster
+<iframe src="Poster.pdf" width="800" height="600" style="border: none;"></iframe>

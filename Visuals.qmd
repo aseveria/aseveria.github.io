@@ -1,0 +1,7 @@
+---
+title: "Visuals"
+toc: false
+about: 
+  template: solana
+---
+I believe that effective data storytelling can convey information more smoothly and efficiently. Over the years, I have focused on enhancing my visualization skills to achieve this. Below are some examples of my work.

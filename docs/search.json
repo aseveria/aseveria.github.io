@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "Research/DSI/Sociome Data Commons.html",
+    "href": "Research/DSI/Sociome Data Commons.html",
+    "title": "Sociome Data Commons",
+    "section": "",
+    "text": "During the University of Chicago’s Data Science Summer Lab program, I had the opportunity to work as a research assistant on a project called the Sociome Data Commons. This project aims to create an open-source platform for uploading, storing, and accessing sociome datasets, particularly those related to clinical data. Sociome data encompasses variables related to Social Determinants of Health, as well as social, environmental, behavioral, housing, and economic factors.\n\n\nI focused on environmental data, which is crucial to explore in conjunction with healthcare data, as it can help identify exacerbating factors or causes of poor health. For example, high humidity levels have been found to trigger airway narrowing in individuals with asthma.\nMy responsibilities included detecting weather anomalies using public data from the National Oceanic and Atmospheric Administration (NOAA). I employed machine learning methods, such as k-Nearest Neighbors (KNN) and Rolling Means, to accomplish this task.\nAdditionally, the initial weeks of my program involved geocoding, debugging, and improving the reproducibility of the code."
+  },
+  {
+    "objectID": "Research/DSI/Sociome Data Commons.html#research-overview",
+    "href": "Research/DSI/Sociome Data Commons.html#research-overview",
+    "title": "Sociome Data Commons",
+    "section": "",
+    "text": "During the University of Chicago’s Data Science Summer Lab program, I had the opportunity to work as a research assistant on a project called the Sociome Data Commons. This project aims to create an open-source platform for uploading, storing, and accessing sociome datasets, particularly those related to clinical data. Sociome data encompasses variables related to Social Determinants of Health, as well as social, environmental, behavioral, housing, and economic factors.\n\n\nI focused on environmental data, which is crucial to explore in conjunction with healthcare data, as it can help identify exacerbating factors or causes of poor health. For example, high humidity levels have been found to trigger airway narrowing in individuals with asthma.\nMy responsibilities included detecting weather anomalies using public data from the National Oceanic and Atmospheric Administration (NOAA). I employed machine learning methods, such as k-Nearest Neighbors (KNN) and Rolling Means, to accomplish this task.\nAdditionally, the initial weeks of my program involved geocoding, debugging, and improving the reproducibility of the code."
+  },
+  {
+    "objectID": "Research/DSI/Sociome Data Commons.html#poster",
+    "href": "Research/DSI/Sociome Data Commons.html#poster",
+    "title": "Sociome Data Commons",
+    "section": "Poster",
+    "text": "Poster"
+  },
+  {
     "objectID": "Questions.html",
     "href": "Questions.html",
     "title": "",
@@ -54,5 +75,12 @@
     "title": "Welcome!",
     "section": "",
     "text": "Before college, I danced Mexican Ballet Folklorico for six years, which still holds a special place in my heart. The picture above was taken at my college in the fall of ’23, where I danced one last time. Additionally, I had the opportunity to share my knowledge by teaching young elementary students regional Mexican dances in Minnesota. I truly love learning about my culture (Hense me studying abroad in Mexico (Fall ’24)) and passing that knowledge on to others!\nOutside of coding, I’m committed to fostering a safe and welcoming environment for students like me. This dedication is reflected in my roles on my college’s Latinx Student Union board and the Student Advisory Board for MSCS (Math, Statistics, and Computer Science).\nIf you’re curious about the ideas I’m constantly exploring, check out my Questions tab to see what thoughts linger in my mind daily."
+  },
+  {
+    "objectID": "Visuals.html",
+    "href": "Visuals.html",
+    "title": "Visuals",
+    "section": "",
+    "text": "I believe that effective data storytelling can convey information more smoothly and efficiently. Over the years, I have focused on enhancing my visualization skills to achieve this. Below are some examples of my work."
   }
 ]

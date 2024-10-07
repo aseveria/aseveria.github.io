@@ -9,12 +9,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: Questions.qmd
-        text: Questions
-      - href: Research.qmd
-        text: Research
       - href: Projects.qmd
         text: Projects
+      - href: Research.qmd
+        text: Research
+      - href: Visuals.qmd
+        text: Visuals
+      - href: Questions.qmd
+        text: Questions
 
   page-footer:
     left: |
