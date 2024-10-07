@@ -81,6 +81,6 @@
     "href": "Visuals.html",
     "title": "Visuals",
     "section": "",
-    "text": "I believe that effective data storytelling can convey information more smoothly and efficiently. Over the years, I have focused on enhancing my visualization skills to achieve this. Below are some examples of my work."
+    "text": "I believe that effective data storytelling can convey information more smoothly and efficiently. Over the years, I have focused on enhancing my visualization skills to achieve this. Below are some examples of my work.\n\n\nError: &lt;text&gt;:15:1: unexpected '&lt;'\n14:         legend.text = element_text(size=5))\n15: &lt;\n    ^"
   }
 ]

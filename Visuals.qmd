@@ -1,9 +1,11 @@
 ---
 title: "Visuals"
 toc: false
-about: 
-  template: solana
+about:
+  template: "solana"
 ---
+
+
 I believe that effective data storytelling can convey information more smoothly and efficiently. Over the years, I have focused on enhancing my visualization skills to achieve this. Below are some examples of my work.
 
 ```{r setup, include=FALSE}
@@ -24,7 +26,6 @@ library(plotly)
 ```
 
 ```{r, message=FALSE, warning=FALSE, results="hide",echo = FALSE}
-
 census2020 <- tidycensus::get_acs(year = 2020, state = "MN", geography = "tract", variables = c(	
 "B01003_001", "B19013_001", "B23006_023", "B25058_001", "B25107_001", "B25003_001", "B25003_002", "B25003_003", "B25077_001"), output = 'wide', geometry = TRUE) %>%
   filter(word(NAME, 4) %in% c("Ramsey","Hennepin"))%>%
@@ -72,6 +73,7 @@ ggplot() +
         plot.title = element_text(size = 8), 
         plot.subtitle = element_text(size = 8),
         legend.text = element_text(size=5))
+<hr> 
 ```
 
 ```{r, message=FALSE, warning=FALSE, results="hide", echo = FALSE}
@@ -173,6 +175,9 @@ theme_classic() +
     theme(legend.position= "none") 
 ggplotly(p)
 ```
+
+
+
 ```{r, message=FALSE, warning=FALSE, echo = FALSE}
 gifts_gender <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-13/gifts_gender.csv')
 
