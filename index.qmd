@@ -20,7 +20,7 @@ about:
       href: mailto:aseveria@macalester.edu
     - icon: file-text
       text: Resume
-      href: https://drive.google.com/file/d/1huakF6UghCpyABH8HmiDoO2y-kUJ_-3K/view?usp=share_link
+      href: https://drive.google.com/file/d/1iIicHlOL0J7uoR-z3vHs5E2y8sxy58yL/view?usp=share_link
       target: _blank
 ---
 :::{#intro-heading}
