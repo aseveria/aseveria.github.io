@@ -79,8 +79,50 @@
   {
     "objectID": "Visuals.html",
     "href": "Visuals.html",
-    "title": "Visuals",
+    "title": "Data Visualizations",
     "section": "",
-    "text": "I believe that effective data storytelling can convey information more smoothly and efficiently. Over the years, I have focused on enhancing my visualization skills to achieve this. Below are some examples of my work.\n\n\nError: &lt;text&gt;:15:1: unexpected '&lt;'\n14:         legend.text = element_text(size=5))\n15: &lt;\n    ^"
+    "text": "I believe that effective data storytelling can convey information more smoothly and efficiently. Over the years, I have focused on enhancing my visualization skills to achieve this. Below are some examples of my work."
+  },
+  {
+    "objectID": "Visuals.html#continental-movement-of-refugees-seeking-asylum-2022",
+    "href": "Visuals.html#continental-movement-of-refugees-seeking-asylum-2022",
+    "title": "Data Visualizations",
+    "section": "Continental Movement of Refugees Seeking Asylum (2022)",
+    "text": "Continental Movement of Refugees Seeking Asylum (2022)\nSource: tidytuesday"
+  },
+  {
+    "objectID": "Visuals.html#median-income-per-tract-in-ramsey-and-hennepin-county-minnesota-2020",
+    "href": "Visuals.html#median-income-per-tract-in-ramsey-and-hennepin-county-minnesota-2020",
+    "title": "Data Visualizations",
+    "section": "Median Income per tract in Ramsey and Hennepin County, Minnesota (2020)",
+    "text": "Median Income per tract in Ramsey and Hennepin County, Minnesota (2020)\nSource: Census Data"
+  },
+  {
+    "objectID": "Visuals.html#record-setting-temperatures-in-san-francisco-2011",
+    "href": "Visuals.html#record-setting-temperatures-in-san-francisco-2011",
+    "title": "Data Visualizations",
+    "section": "Record Setting temperatures in San Francisco (2011)",
+    "text": "Record Setting temperatures in San Francisco (2011)\nSource: San Francisco (SFO) in 2011"
+  },
+  {
+    "objectID": "Visuals.html#soccer-visualization",
+    "href": "Visuals.html#soccer-visualization",
+    "title": "Data Visualizations",
+    "section": "Soccer Visualization",
+    "text": "Soccer Visualization\nSource: tidytuesday"
+  },
+  {
+    "objectID": "Visuals.html#valentines-day",
+    "href": "Visuals.html#valentines-day",
+    "title": "Data Visualizations",
+    "section": "Valentine’s Day",
+    "text": "Valentine’s Day\nSource: tidytuesday"
+  },
+  {
+    "objectID": "Visuals.html#national-park-species",
+    "href": "Visuals.html#national-park-species",
+    "title": "Data Visualizations",
+    "section": "National Park Species",
+    "text": "National Park Species\nSource: tidytuesday"
   }
 ]

@@ -1,5 +1,5 @@
 ---
-title: "Visuals"
+title: "Data Visualizations"
 toc: false
 about:
   template: "solana"
@@ -23,6 +23,8 @@ library(cowplot)
 library(ggpubr)
 library(ggplot2)
 library(plotly)
+library(refugees)
+library(chorddiag)
 ```
 
 ```{r, message=FALSE, warning=FALSE, results="hide",echo = FALSE}
@@ -58,11 +60,14 @@ roads <- roads %>%
 roads_sub <- st_crop(roads,st_bbox(census2020))
 ```
 
+## Median Income per tract in Ramsey and Hennepin County, Minnesota (2020)
+Source: Census Data
+
 ```{r, message=FALSE, warning=FALSE, results="hide", echo = FALSE}
 ggplot() +
   geom_sf(data=census2020 %>% drop_na(medianIncome), mapping=aes(fill=medianIncome), alpha=0.99) + #put census tracts on map and fill by your variable of interest\
     geom_sf(data=roads_sub ,fill = "gray", color = "gray", lwd = 0.2)+ #roads data here
-    labs(fill="Median Income", color="", title="Median Income per tract in Ramsey and Hennepin County (MN)")+ # add labels to fit your variables 
+    labs(fill="Median Income", color="")+ # add labels to fit your variables 
     scale_fill_gradientn(colours = c("tomato4", "tomato3", "orange3", "lightsalmon4"))+ # change to preferred color palette
     theme_classic()+
     theme(axis.line = element_blank(), 
@@ -73,9 +78,10 @@ ggplot() +
         plot.title = element_text(size = 8), 
         plot.subtitle = element_text(size = 8),
         legend.text = element_text(size=5))
-<hr> 
 ```
 
+## Record Setting temperatures in San Francisco (2011)
+Source: San Francisco (SFO) in 2011
 ```{r, message=FALSE, warning=FALSE, results="hide", echo = FALSE}
 weather <- read_csv("https://lmyint.github.io/212_fall_2023/data/sfo_weather.csv")
 
@@ -150,6 +156,8 @@ plot_grid(bp, dp, align = "v", nrow = 2, rel_heights = c(5/8, 2/8))
 
 ```
 
+## Soccer Visualization
+Source: [tidytuesday](https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/wcmatches.csv)
 
 
 ```{r, message=FALSE, warning=FALSE, echo = FALSE}
@@ -176,7 +184,8 @@ theme_classic() +
 ggplotly(p)
 ```
 
-
+## Valentine's Day 
+Source: [tidytuesday](https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-13/gifts_gender.csv)
 
 ```{r, message=FALSE, warning=FALSE, echo = FALSE}
 gifts_gender <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-13/gifts_gender.csv')
@@ -207,5 +216,112 @@ gender_longer%>%
   labs(x="Count", y= "Category", title = "Average spendings on Valentines Day (2010-2022)")+
   geom_heart(aes(color = Gender), size=15) +
   theme_classic()
+```
+
+## Continental Movement of Refugees Seeking Asylum (2022)
+Source: [tidytuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md)
+
+```{r, message=FALSE, warning=FALSE, echo = FALSE}
+population <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv')
+populations <- refugees::population
+populations2010 <- filter(populations, year >= 2010)
+write_csv(populations2010, "population.csv")
+pop <- read_csv("population.csv")
+
+
+CAC <- read_csv("CAC.csv")
+
+pop_with_continent <- pop %>%
+  filter(year == 2022) %>%
+  left_join(CAC, by = c("coo_iso" = "Three_Letter_Country_Code")) %>%  
+  rename(continent_coo = Continent_Name) %>%             
+  left_join(CAC, by = c("coa_iso" = "Three_Letter_Country_Code")) %>%  
+  rename(continent_coa = Continent_Name)               
+
+sumdat_continents <- pop_with_continent %>%
+  group_by(continent_coo, continent_coa) %>%
+  summarize(total_refugees = sum(refugees, na.rm = TRUE)) %>%
+  ungroup()
+
+continent_matrix <- sumdat_continents %>%
+  pivot_wider(id_cols = continent_coo, 
+              names_from = continent_coa, 
+              values_from = total_refugees, 
+              values_fill = 0)
+
+continent_matrix <- continent_matrix %>%
+  filter(continent_coo != "NA") %>%
+  select(-"NA")
+
+continent_matrix <- continent_matrix %>%
+  column_to_rownames(var = "continent_coo") %>%
+  as.matrix()
+
+newmat_continents <- continent_matrix + t(continent_matrix)
+
+# Plot the chord diagram by continent
+chorddiag(continent_matrix,
+          groupnameFontsize = 12,
+          groupPadding = 10,
+          showTicks = TRUE,
+          margin = 120,
+          groupColors = RColorBrewer::brewer.pal(6, "Set3"))
+
+```
+
+```{r, message=FALSE, warning=FALSE, echo = FALSE}
+most_visited_nps_species_data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-10-08/most_visited_nps_species_data.csv')
+```
+
+```{r, message=FALSE, warning=FALSE, echo = FALSE}
+
+temp1 <- most_visited_nps_species_data %>%
+  group_by(ParkName, CategoryName) %>%
+  summarise(Count = n()) 
+
+
+temp2 <- temp1 %>%
+  group_by(ParkName) %>%
+  summarise(total = sum(Count)) 
+
+temp3 <- temp1 %>%
+  left_join(temp2, by = c("ParkName" = "ParkName")) %>%
+  mutate(percentage = (Count / total) * 100) %>%
+  group_by(ParkName) %>%
+  mutate(CategoryName = fct_reorder(CategoryName, percentage))
+
+
+```
+
+## National Park Species
+Source: [tidytuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-10-08/readme.md)
+
+```{r, message=FALSE, warning=FALSE, echo = FALSE}
+#| fig.width: 10
+#| fig.height: 7
+highlighted_categories <- c("Vascular Plant", "Bird", "Insect")
+
+temp3 %>%
+  ggplot(aes(x=percentage, y = ParkName, fill = CategoryName)) +
+  geom_col() +
+   scale_fill_manual(values = c("#F9CAC2","#A97EB3", "#F0B6E2","#EEECF4", "#4F2D27", "#972F2F", "#E35746" ,"#EDDBF3",  "#E9B6F0","#F9BF8F","#FA8A1D", "#FFEFCE", "#F7BE4B", "#ECAEA1", "#E5266B", "#E7DBF3" , "#D83F1D")) +
+  labs(x = "Percentage", y = "", fill = "Green highlight indictates most common", title = "Percentage of Species at Americas Most Visited Parks") +
+  theme(legend.position = "bottom",               
+        legend.direction = "horizontal",           
+        legend.title = element_text(vjust = 1),
+        axis.line.y = element_blank(),
+        axis.line.x = element_blank(),
+        axis.ticks.y=element_blank()) + 
+    guides(
+    fill = guide_legend(
+      nrow = 2,
+      title.position = "top",   # Title above the legend keys
+      override.aes = list(
+        color = ifelse(levels(temp3$CategoryName) %in% highlighted_categories, "#00FF00", NA), 
+        size = ifelse(levels(temp3$CategoryName) %in% highlighted_categories, 0.5, 0.1)     #
+      )
+    )
+  )+
+  scale_x_continuous(expand = c(0, 0))
 ```
 
