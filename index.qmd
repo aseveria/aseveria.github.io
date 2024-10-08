@@ -1,7 +1,7 @@
 ---
 title: "Welcome!"
+toc: false
 about: 
-  id: intro-heading
   template: jolla
   image-shape: round
   image-width: 14em
