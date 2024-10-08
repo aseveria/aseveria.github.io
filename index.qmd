@@ -1,11 +1,11 @@
 ---
 title: "Welcome!"
-toc: false
 about: 
+  id: intro-heading
+  template: jolla
   image-shape: round
   image-width: 14em
   image: IMG_5601.jpeg
-  template: jolla
   links:
     - icon: linkedin
       text: LinkedIn
