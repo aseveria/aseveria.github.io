@@ -24,7 +24,7 @@ about:
       target: _blank
 ---
 :::{#intro-heading}
-Hi! I'm **Elinai Alicia Severiano Perez** (she/her), a passionate student double majoring in **Data Science & Educational Studies** at Macalester College (Class of '26). I love working with data, especially to uncover patterns and develop solutions for our small world. Through my coursework and research positions, I’ve gained hands-on experience in data science, analytics, and machine learning algorithms. 
+Hi! I'm **Elinai Alicia Severiano Perez** (she/her), an intrigued student double majoring in **Data Science & Educational Studies** at Macalester College (Class of '26). I love working with data, especially to uncover patterns and develop solutions for our small world. Through my coursework and research positions, I’ve gained hands-on experience in data science, visualizations, analytics, and machine learning algorithms. 
 
 Currently, **I am conducting analytical research** in Mérida, Yucatán, exploring insights into the Southeast Asian immigrant community in Mexico with the limited data available.
 
