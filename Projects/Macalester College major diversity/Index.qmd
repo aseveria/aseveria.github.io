@@ -20,7 +20,7 @@ Lindsay Alaniz, Sicy Wang, and Elinai Alicia Severiano Perez
 
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE, echo = FALSE}
 library(tidyverse)
 library(ggplot2)
 library(lubridate)
@@ -35,7 +35,7 @@ majordata <- read_csv("majordatacopy.csv")
 
 For this part I looked into the five major divisions: Social Sciences, Natural Sciences and Mathematics, Humanities, Interdisciplinary, and Fine Arts. I compared them over the years and a graph for women and one for men. 
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 majordata14 <- majordata %>%
   select(grad_year, major1_division ,sex) %>%
     filter(sex=="F")%>%
@@ -60,11 +60,12 @@ theme_classic()+
        annotate("text", x= "2013-14", y=2, label="Fine Arts", color="coral4") +
       theme(legend.position= "none") +
     theme(text = element_text(family = "Times New Roman")) 
-ggplotly(p)
+ggplotly(p, width = 600, height = 400)  
+
 ```
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 majordata14.0 <- majordata %>%
   select(grad_year, major1_division ,sex) %>%
     filter(sex=="M")%>%
@@ -87,13 +88,13 @@ theme_classic()+
        annotate("text", x= "2013-14", y=2, label="Fine Arts", color="coral4") +
       theme(legend.position= "none") +
     theme(text = element_text(family = "Times New Roman")) 
-ggplotly(p1)
+ggplotly(p1, width = 600, height = 400)  
 ```
 
 **Concentrations**
 
 For this part I looked into the different concentrations offered at Macalester and the enrollment between men and women. Further, I looked into first concentration (as in the first declared by a student) and second concentration 
-```{r}
+```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=4}
 conc <- majordata %>%
   filter(concentration_ct == "1" ) 
 
@@ -106,7 +107,7 @@ theme_minimal() +
     theme(text = element_text(family = "Times New Roman")) 
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=4}
 conc2 <- majordata %>%
   filter(concentration_ct == "2" ) 
 
@@ -124,7 +125,7 @@ theme_minimal() +
 
 Finally, I looked into the different lengths of term enrollments between men and women, but more specifically, by major division
 
-```{r}
+```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=4}
 term.enr <- majordata%>%
   filter(major1_division %in% c("Fine Arts" , "Humanities" , "Interdisciplinary" , "Natural Sciences and Mathematics" , "Social Sciences"))
 
