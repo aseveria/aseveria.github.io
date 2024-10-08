@@ -1,0 +1,17 @@
+shiny
+leaflet
+ggplot2
+plotly
+tidycensus
+dplyr
+stringr
+tidyverse
+tibble
+tidyr
+readr
+purrr
+forcats
+lubridate
+gplots
+sf
+USAboundaries
